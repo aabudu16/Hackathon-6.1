@@ -22,35 +22,36 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         label.backgroundColor  = .blue
         return label
     }()
-   
+    
     lazy var district:UILabel  = {
-           let label = UILabel()
+        let label = UILabel()
         label.backgroundColor  = .blue
-           return label
-       }()
+        return label
+    }()
     
     lazy var address:UILabel  = {
-           let label = UILabel()
+        let label = UILabel()
         label.backgroundColor  = .blue
-           return label
-       }()
+        return label
+    }()
     
     lazy var number:UILabel  = {
-           let label = UILabel()
+        let label = UILabel()
         label.backgroundColor  = .blue
-           return label
-       }()
+        return label
+    }()
     
     lazy var email:UILabel  = {
-           let label = UILabel()
+        let label = UILabel()
         label.backgroundColor  = .blue
-           return label
-       }()
+        return label
+    }()
     
     //MARK: Lifecycle
     override init (frame:CGRect){
         super.init(frame:frame)
-  configureImageViewConstraints()
+        configureImageViewConstraints()
+        configureNameConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +63,12 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         self.addSubview(congressImage)
         congressImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([congressImage.topAnchor.constraint(equalTo: self.topAnchor), congressImage.leadingAnchor.constraint(equalTo: self.leadingAnchor), congressImage.trailingAnchor.constraint(equalTo: self.trailingAnchor), congressImage.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -(self.layer.frame.height  / 2))])
+    }
+    
+    func configureNameConstraints(){
+        self.addSubview(name)
+        name.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([name.topAnchor.constraint(equalTo: congressImage.bottomAnchor, constant: 2), name.leadingAnchor.constraint(equalTo: self.leadingAnchor), name.trailingAnchor.constraint(equalTo: self.trailingAnchor), name.heightAnchor.constraint(equalToConstant: 20)])
     }
     
 }

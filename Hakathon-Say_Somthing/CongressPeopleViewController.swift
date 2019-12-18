@@ -70,7 +70,8 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
-        cell.backgroundColor = .blue
+        cell.layer.borderWidth = 2
+        cell.layer.borderColor = UIColor.blue.cgColor
         return cell
     }
 }
