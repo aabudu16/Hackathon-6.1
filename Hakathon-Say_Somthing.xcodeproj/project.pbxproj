@@ -18,6 +18,7 @@
 		859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* PreviewViewController.swift */; };
 		859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E523AAAB04005F8173 /* Identifiers.swift */; };
 		859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */; };
+		971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		859A29E323AA9CCA005F8173 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		859A29E523AAAB04005F8173 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPerson.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		859A29BC23AA9BC8005F8173 /* Hakathon-Say_Somthing */ = {
 			isa = PBXGroup;
 			children = (
+				971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */,
 				859A29BD23AA9BC8005F8173 /* AppDelegate.swift */,
 				859A29BF23AA9BC8005F8173 /* SceneDelegate.swift */,
 				859A29C123AA9BC8005F8173 /* UserInfoViewController.swift */,
@@ -217,6 +220,7 @@
 				859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */,
 				859A29BE23AA9BC8005F8173 /* AppDelegate.swift in Sources */,
 				859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */,
+				971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */,
 				859A29C023AA9BC8005F8173 /* SceneDelegate.swift in Sources */,
 				859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */,
 			);
