@@ -10,7 +10,7 @@ import UIKit
 
 class CongressPeopleViewController: UIViewController {
     
-     let summaryMenuHeight:CGFloat = 200
+     let summaryMenuHeight:CGFloat = 250
     lazy var searchBar:UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.prominent
@@ -38,6 +38,32 @@ class CongressPeopleViewController: UIViewController {
            view.backgroundColor = .yellow
            return view
        }()
+    
+    lazy var summaryDiscription:UITextView  = {
+           let tv = UITextView()
+           tv.backgroundColor = .clear
+           tv.textAlignment = .center
+           tv.textAlignment = .left
+           tv.adjustsFontForContentSizeCategory = false
+           tv.isUserInteractionEnabled = false
+           tv.text = "Peter J. Abbate, Jr., a lifelong resident of Bensonhurst, Brooklyn, has been elected by the people of Dyker Heights, Bath Beach, Bensonhurst and Borough Park to represent them in the New York State Assembly since 1986. Born on March 22, 1949, Mr. Abbate attended local schools, beginning at Regina Pacis Grammar School and on to Bishop Ford High School. He entered St. John’s University in 1967 where he earned his Bachelor of Arts degree in political science."
+           tv.font = UIFont(name: "Avenir-Light", size: 16)
+        tv.layer.borderColor = UIColor.black.cgColor
+        tv.layer.borderWidth = 1
+           return tv
+       }()
+    
+    lazy var summaryLabel:UILabel  = {
+             let label = UILabel()
+             label.backgroundColor  = .blue
+             label.text = "*** Summary ***"
+             label.textAlignment = .left
+             label.adjustsFontSizeToFitWidth = true
+             label.numberOfLines = 0
+        
+             label.backgroundColor = .blue
+             return label
+         }()
     
     lazy var email:UILabel  = {
           let label = UILabel()
@@ -78,6 +104,12 @@ class CongressPeopleViewController: UIViewController {
         summaryView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([summaryView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 0), summaryView.leadingAnchor.constraint(equalTo: view.leadingAnchor), summaryView.trailingAnchor.constraint(equalTo: view.trailingAnchor), summaryView.heightAnchor.constraint(equalToConstant: summaryMenuHeight)])
+    }
+    
+   func configureSummaryLabelConstraint(){
+        summaryView.addSubview(summaryLabel)
+    summaryLabel.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([summaryLabel.topAnchor.constraint(equalTo: summaryView.topAnchor,constant: 2), summaryLabel.leadingAnchor.constraint(equalTo: summaryView.leadingAnchor), summaryLabel.trailingAnchor.constraint(equalTo: summaryView.trailingAnchor), summaryLabel.heightAnchor.constraint(equalToConstant: 20)])
     }
 }
 
