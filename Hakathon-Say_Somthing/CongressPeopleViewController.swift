@@ -83,7 +83,7 @@ class CongressPeopleViewController: UIViewController {
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-          UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.7, delay: 0.5, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                       self.summaryView.frame = CGRect(x: 0, y: (self.view.frame.height - self.summaryMenuHeight) + 20, width: self.view.frame.width, height: self.summaryMenuHeight)
                   }, completion: nil)
     }

@@ -63,6 +63,12 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    lazy var hairLineView:UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        return view
+    }()
+    
     //MARK: Lifecycle
     override init (frame:CGRect){
         super.init(frame:frame)
@@ -71,6 +77,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         configureNameConstraints()
         configureAddressConstraints()
         configurePhoneNumberConstraints()
+        configureHairLineViewConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -107,4 +114,10 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
            phoneNumber.translatesAutoresizingMaskIntoConstraints = false
            NSLayoutConstraint.activate([phoneNumber.topAnchor.constraint(equalTo: address.bottomAnchor, constant: 3), phoneNumber.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), phoneNumber.trailingAnchor.constraint(equalTo: self.trailingAnchor), phoneNumber.heightAnchor.constraint(equalTo: district.heightAnchor)])
        }
+    
+    func configureHairLineViewConstraints(){
+        self.addSubview(hairLineView)
+        hairLineView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([hairLineView.topAnchor.constraint(equalTo: phoneNumber.topAnchor, constant:  25), hairLineView.centerXAnchor.constraint(equalTo: self.centerXAnchor), hairLineView.heightAnchor.constraint(equalToConstant: 1), hairLineView.widthAnchor.constraint(equalToConstant: 100)])
+    }
 }
