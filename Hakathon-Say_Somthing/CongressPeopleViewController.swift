@@ -26,7 +26,7 @@ class CongressPeopleViewController: UIViewController {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         collectionView.register( CongressPeopleCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.congressCell.rawValue)
         collectionView.allowsMultipleSelection = true
-        collectionView.backgroundColor = .blue
+        collectionView.backgroundColor = .white
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -53,7 +53,15 @@ class CongressPeopleViewController: UIViewController {
     }
 }
 
-extension CongressPeopleViewController: UICollectionViewDelegate{}
+extension CongressPeopleViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        #warning("// handle a animating a view to show information about the congres person")
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        #warning( "Handle dismissing the congress")
+    }
+}
 
 extension CongressPeopleViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,7 +70,7 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
-        
+        cell.backgroundColor = .blue
         return cell
     }
 }
@@ -70,7 +78,7 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
 extension CongressPeopleViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let virticalCellCGSize = CGSize(width: 200, height: 200)
+        let virticalCellCGSize = CGSize(width: 200, height: 300)
         return virticalCellCGSize
     }
 }
