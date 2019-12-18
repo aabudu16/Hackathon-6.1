@@ -16,6 +16,8 @@
 		859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */; };
 		859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */; };
 		859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* PreviewViewController.swift */; };
+		859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E523AAAB04005F8173 /* Identifiers.swift */; };
+		859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSelectionViewController.swift; sourceTree = "<group>"; };
 		859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleViewController.swift; sourceTree = "<group>"; };
 		859A29E323AA9CCA005F8173 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		859A29E523AAAB04005F8173 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
+		859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +92,9 @@
 				859A29C123AA9BC8005F8173 /* UserInfoViewController.swift */,
 				859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */,
 				859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */,
+				859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */,
 				859A29E323AA9CCA005F8173 /* PreviewViewController.swift */,
+				859A29E523AAAB04005F8173 /* Identifiers.swift */,
 				859A29C623AA9BCA005F8173 /* Assets.xcassets */,
 				859A29C823AA9BCA005F8173 /* LaunchScreen.storyboard */,
 				859A29CB23AA9BCA005F8173 /* Info.plist */,
@@ -205,10 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */,
 				859A29C223AA9BC8005F8173 /* UserInfoViewController.swift in Sources */,
 				859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */,
 				859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */,
 				859A29BE23AA9BC8005F8173 /* AppDelegate.swift in Sources */,
+				859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */,
 				859A29C023AA9BC8005F8173 /* SceneDelegate.swift in Sources */,
 				859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */,
 			);
