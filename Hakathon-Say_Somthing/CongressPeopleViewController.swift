@@ -10,6 +10,7 @@ import UIKit
 
 class CongressPeopleViewController: UIViewController {
     
+     let summaryMenuHeight:CGFloat = 200
     lazy var searchBar:UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.prominent
@@ -32,6 +33,22 @@ class CongressPeopleViewController: UIViewController {
         return collectionView
     }()
     
+    lazy var summaryView:UIView = {
+           let view = UIView()
+           view.backgroundColor = .yellow
+           return view
+       }()
+    
+    lazy var email:UILabel  = {
+          let label = UILabel()
+          label.backgroundColor  = .blue
+          
+          label.textAlignment = .left
+          label.adjustsFontSizeToFitWidth = true
+          label.numberOfLines = 0
+          return label
+      }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +56,10 @@ class CongressPeopleViewController: UIViewController {
         configureCollectionViewConstraints()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureSummaryMenuHeightConstraint()
+    }
     
   private func configureSearchBarConstaints(){
         view.addSubview(searchBar)
@@ -51,15 +72,27 @@ class CongressPeopleViewController: UIViewController {
         congressCollectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([congressCollectionView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor), congressCollectionView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor), congressCollectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor), congressCollectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)])
     }
+    
+    private func configureSummaryMenuHeightConstraint(){
+        view.addSubview(summaryView)
+        summaryView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([summaryView.topAnchor.constraint(equalTo: view.bottomAnchor, constant: 0), summaryView.leadingAnchor.constraint(equalTo: view.leadingAnchor), summaryView.trailingAnchor.constraint(equalTo: view.trailingAnchor), summaryView.heightAnchor.constraint(equalToConstant: summaryMenuHeight)])
+    }
 }
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        #warning("// handle a animating a view to show information about the congres person")
+          UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                      self.summaryView.frame = CGRect(x: 0, y: (self.view.frame.height - self.summaryMenuHeight) + 20, width: self.view.frame.width, height: self.summaryMenuHeight)
+                  }, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        #warning( "Handle dismissing the congress")
+        UIView.animate(withDuration: 0.3) {
+            self.summaryView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.summaryMenuHeight)
+
+        }
     }
 }
 
@@ -70,7 +103,7 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
-        //cell.layer.borderWidth = 2
+       // cell.layer.borderWidth = 2
        // cell.layer.borderColor = UIColor.blue.cgColor
         return cell
     }

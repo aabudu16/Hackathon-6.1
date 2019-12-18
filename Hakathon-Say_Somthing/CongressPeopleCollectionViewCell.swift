@@ -59,17 +59,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
-        label.font = UIFont(name: "Avenir-Light", size: 16)
-        return label
-    }()
-    
-    lazy var email:UILabel  = {
-        let label = UILabel()
-        label.backgroundColor  = .blue
-        
-        label.textAlignment = .left
-        label.adjustsFontSizeToFitWidth = true
-        label.numberOfLines = 0
+        label.font = UIFont(name: "Avenir-Light", size: 17)
         return label
     }()
     
@@ -91,7 +81,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     func configureImageViewConstraints(){
         self.addSubview(congressImage)
         congressImage.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([congressImage.topAnchor.constraint(equalTo: self.topAnchor), congressImage.leadingAnchor.constraint(equalTo: self.leadingAnchor), congressImage.trailingAnchor.constraint(equalTo: self.trailingAnchor), congressImage.heightAnchor.constraint(equalTo: self.heightAnchor, constant: -(self.layer.frame.height  / 2))])
+        NSLayoutConstraint.activate([congressImage.topAnchor.constraint(equalTo: self.topAnchor), congressImage.centerXAnchor.constraint(equalTo: self.centerXAnchor), congressImage.widthAnchor.constraint(equalToConstant: 110), congressImage.heightAnchor.constraint(equalToConstant: 165)])
     }
    
     func configureDistrictConstraints(){
@@ -115,6 +105,6 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     func configurePhoneNumberConstraints(){
          self.addSubview(phoneNumber)
            phoneNumber.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint.activate([phoneNumber.topAnchor.constraint(equalTo: address.bottomAnchor, constant: 2), phoneNumber.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), phoneNumber.trailingAnchor.constraint(equalTo: self.trailingAnchor), phoneNumber.heightAnchor.constraint(equalTo: district.heightAnchor)])
+           NSLayoutConstraint.activate([phoneNumber.topAnchor.constraint(equalTo: address.bottomAnchor, constant: 3), phoneNumber.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), phoneNumber.trailingAnchor.constraint(equalTo: self.trailingAnchor), phoneNumber.heightAnchor.constraint(equalTo: district.heightAnchor)])
        }
 }
