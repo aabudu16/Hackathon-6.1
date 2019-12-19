@@ -130,13 +130,19 @@ class CongressPeopleViewController: UIViewController {
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+
         UIView.animate(withDuration: 0.7, delay: 0.5, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            let singlePerson = self.congressPeople[indexPath.row]
+                       self.summaryDiscription.text = singlePerson.description
+                       self.email.text = "Email: \(singlePerson.email)"
             self.summaryView.frame = CGRect(x: 0, y: (self.view.frame.height - self.summaryMenuHeight) + 20, width: self.view.frame.width, height: self.summaryMenuHeight)
+           
         }, completion: nil)
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         UIView.animate(withDuration: 0.3) {
+            
             self.summaryView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.summaryMenuHeight)
             
         }

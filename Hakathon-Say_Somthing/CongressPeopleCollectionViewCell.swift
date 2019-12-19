@@ -20,7 +20,6 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var name:UILabel  = {
         let label = UILabel()
-        //label.backgroundColor  = .blue
         label.text = "Brian Smith"
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
@@ -32,8 +31,6 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     lazy var district:UILabel  = {
         let label = UILabel()
         label.text = "District 11"
-        // label.backgroundColor  = .blue
-        
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont(name: "Avenir-Bold", size: 16)
@@ -55,7 +52,6 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var phoneNumber:UILabel  = {
         let label = UILabel()
-        // label.backgroundColor  = .blue
         label.text = "(212)567-2956"
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
@@ -92,6 +88,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         district.text = "District \(person.district)"
         congressImage.kf.indicatorType = .activity
         congressImage.kf.setImage(with: URL(string: person.imageURL))
+        
     }
     
     
