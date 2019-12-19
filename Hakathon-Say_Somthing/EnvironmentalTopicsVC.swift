@@ -58,6 +58,12 @@ class EnvironmentalTopicsVC: UIViewController {
     self.navigationItem.title = "Topics"
      
   }
+    
+     private func showAlert(with title: String, and message: String) {
+          let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+          alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+          present(alertVC, animated: true, completion: nil)
+      }
    
 }
 extension EnvironmentalTopicsVC: UITableViewDelegate, UITableViewDataSource {
@@ -98,5 +104,25 @@ extension EnvironmentalTopicsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension EnvironmentalTopicsVC: MFMailComposeViewControllerDelegate{
-    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if let err = error {
+            showAlert(with: "Error", and: "Encountered a problem \(err)")
+            controller.dismiss(animated: true, completion: nil)
+            return
+        }
+        
+        switch result{
+        case .cancelled:
+            print("cancelled")
+        case .failed:
+            showAlert(with: "Error", and: "Problem trying to send email. please check you connection adn try again")
+        case .sent:
+            showAlert(with: "Success", and: "Thank you for participating in a major environmental issue. Together we can make this plant great again")
+        case .saved:
+            showAlert(with: "Saved", and: "Message was saved as a draft")
+        @unknown default:
+            fatalError()
+        }
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
