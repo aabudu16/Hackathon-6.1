@@ -17,7 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: UserInfoViewController())
+        let navVC = UINavigationController(rootViewController: UserInfoViewController())
+        navVC.navigationBar.barStyle = .black
+        navVC.navigationBar.backgroundColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
+        navVC.navigationBar.barTintColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
+        window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }
 

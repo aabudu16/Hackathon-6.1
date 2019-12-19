@@ -14,9 +14,10 @@ class EnvironmentalTopicsCell: UITableViewCell {
   lazy var topicLabel : UILabel = {
     let label = UILabel()
     label.numberOfLines = 0
+
     label.text = "Topics"
     label.font = UIFont(name: "Avenir-Light", size: 30)
-    label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    label.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
     label.textAlignment = .center
     return label
      
@@ -46,7 +47,11 @@ class EnvironmentalTopicsCell: UITableViewCell {
     
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
+    backgroundColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
     setUpViews()
+    let selectedView = UIView()
+    selectedView.backgroundColor = .black
+    selectedBackgroundView = selectedView
   }
    
   required init?(coder: NSCoder) {
