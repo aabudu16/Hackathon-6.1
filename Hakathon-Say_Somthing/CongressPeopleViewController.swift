@@ -18,6 +18,8 @@ class CongressPeopleViewController: UIViewController {
     lazy var searchBar:UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.prominent
+        searchBar.scopeButtonTitles = ["Congress", "District"]
+        searchBar.showsScopeBar = true
         searchBar.placeholder = " Search..."
         searchBar.sizeToFit()
         searchBar.isTranslucent = false
@@ -49,7 +51,6 @@ class CongressPeopleViewController: UIViewController {
         tv.textAlignment = .left
         tv.adjustsFontForContentSizeCategory = true
         tv.isUserInteractionEnabled = false
-        tv.text = "Peter J. Abbate, Jr., a lifelong resident of Bensonhurst, Brooklyn, has been elected by the people of Dyker Heights, Bath Beach, Bensonhurst and Borough Park to represent them in the New York State Assembly since 1986. Born on March 22, 1949, Mr. Abbate attended local schools, beginning at Regina Pacis Grammar School and on to Bishop Ford High School. He entered St. John’s University in 1967 where he earned his Bachelor of Arts degree in political science."
         tv.font = UIFont(name: "Avenir-Light", size: 13)
         return tv
     }()
@@ -66,12 +67,45 @@ class CongressPeopleViewController: UIViewController {
     
     lazy var email:UILabel  = {
         let label = UILabel()
-        label.text = "Email: aabudu17@yahoo.com"
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         return label
     }()
+    
+    var searchCongressResult:[CongressPerson]{
+        get{
+            guard let searchCongressString = searchCongressString else {
+                return congressPeople
+            }
+            guard searchCongressString != "" else {
+                return congressPeople
+            }
+            
+            if let scoptTitles = searchBar.scopeButtonTitles {
+                let currentScopeIndex = searchBar.selectedScopeButtonIndex
+                
+                switch scoptTitles[currentScopeIndex]{
+                case "Congress":
+                    return congressPeople.filter({$0.name.contains(searchCongressString)})
+                case "District":
+                    return
+                        congressPeople.filter({$0.district == Int(searchCongressString)})
+                default:
+                    return congressPeople
+                }
+            }
+            return congressPeople
+        }
+
+    }
+    
+    var searchCongressString:String? = nil {
+        didSet {
+            self.congressCollectionView.reloadData()
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,7 +127,7 @@ class CongressPeopleViewController: UIViewController {
     private func configureSearchBarConstaints(){
         view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor), searchBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor), searchBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor), searchBar.heightAnchor.constraint(equalToConstant: 45)])
+        NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor), searchBar.leadingAnchor.constraint(equalTo: self.view.leadingAnchor), searchBar.trailingAnchor.constraint(equalTo: self.view.trailingAnchor), searchBar.heightAnchor.constraint(equalToConstant: 100)])
     }
     
     func configureCollectionViewConstraints(){
@@ -151,12 +185,12 @@ extension CongressPeopleViewController: UICollectionViewDelegate{
 
 extension CongressPeopleViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return congressPeople.count
+        return searchCongressResult.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
-        let singlePerson = congressPeople[indexPath.row]
+        let singlePerson = searchCongressResult[indexPath.row]
         cell.configureCellFromCongressPerson(person: singlePerson)
         
         return cell
@@ -176,10 +210,17 @@ extension CongressPeopleViewController: UISearchBarDelegate{
         searchBar.showsCancelButton = true
         return true
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+          searchCongressString = searchBar.text
+      }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
+    
+//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+//        <#code#>
+//    }
 }
 
