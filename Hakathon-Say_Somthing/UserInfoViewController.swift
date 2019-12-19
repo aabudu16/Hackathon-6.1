@@ -34,7 +34,7 @@ class UserInfoViewController: UIViewController {
     }()
     lazy var findButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Find My Senator", for: .normal)
+        button.setTitle("Find My Representative", for: .normal)
         button.backgroundColor = .clear
         button.layer.cornerRadius = 25
         button.layer.borderColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
@@ -53,9 +53,10 @@ class UserInfoViewController: UIViewController {
     @objc private func findButtonPressed(){
         validateTextFields()
         let destVC = CongressPeopleViewController()
+        destVC.userName = nameTextField.text!
         self.navigationController?.pushViewController(destVC, animated: true)
     }
-    //MARK: Objective-C Methods
+    
     @objc func handleKeyboardAppearing(sender: Notification) {
         scrollView.contentOffset = CGPoint(x: 0, y: 185)
         scrollView.updateContentView()
@@ -86,8 +87,7 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        nameTextField.tag = 0
-        zipCodeTextField.tag = 1
+        zipCodeTextField.keyboardType = .numberPad
         setConstraints()
         addKeyboardObserver()
         [zipCodeTextField, nameTextField].forEach{$0.delegate = self}
