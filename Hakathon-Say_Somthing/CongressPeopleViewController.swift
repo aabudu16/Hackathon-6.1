@@ -186,7 +186,10 @@ class CongressPeopleViewController: UIViewController {
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchBar.resignFirstResponder()
         let enviromentalVC = EnvironmentalTopicsVC()
+        let info = congressPeople[indexPath.item]
+        enviromentalVC.congressPerson = info
         navigationController?.pushViewController(enviromentalVC, animated: true)
     }
     
@@ -231,12 +234,16 @@ extension CongressPeopleViewController: UISearchBarDelegate{
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
 
 }
 
 extension CongressPeopleViewController: CollectionViewCellDelegate{
     func showCongressSummary(tag: Int) {
-        
+        self.searchBar.resignFirstResponder()
         if let window = UIApplication.shared.keyWindow{
                window.addSubview(deemView)
             window.addSubview(summaryView)

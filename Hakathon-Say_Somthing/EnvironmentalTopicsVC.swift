@@ -7,9 +7,18 @@
 //
 
 import UIKit
+import MessageUI
 
 class EnvironmentalTopicsVC: UIViewController {
    
+    var congressEmail = String()
+    var congressPerson:CongressPerson!{
+        didSet{
+            congressEmail = congressPerson.email
+            print(congressEmail)
+        }
+    }
+    
   var topics = Topic.topics {
     didSet{
       topicTableView.reloadData()
@@ -65,4 +74,29 @@ extension EnvironmentalTopicsVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 100
   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let topic = topics[indexPath.row]
+        let preview = UIAlertController(title: "Preview", message: topic.message, preferredStyle: .alert)
+        let compose = UIAlertAction(title: "Compose", style: .default) { (email) in
+            guard  MFMailComposeViewController.canSendMail() else {return}
+            
+            let composer = MFMailComposeViewController()
+            composer.mailComposeDelegate = self
+            composer.setSubject(topic.topic)
+            composer.setMessageBody(topic.message, isHTML: false)
+            composer.setToRecipients([self.congressEmail])
+            
+            self.present(composer, animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .destructive, handler: nil)
+        preview.addAction(compose)
+        preview.addAction(cancel)
+        
+        present(preview, animated: true, completion: nil)
+    }
+}
+
+extension EnvironmentalTopicsVC: MFMailComposeViewControllerDelegate{
+    
 }
