@@ -73,6 +73,15 @@ class CongressPeopleViewController: UIViewController {
         return label
     }()
     
+    lazy var deemView:UIView = {
+           let deemView = UIView()
+           let tapGuesture = UITapGestureRecognizer(target: self, action: #selector(dismissDeemView))
+           deemView.backgroundColor = UIColor(white: 0, alpha: 0.6)
+           deemView.alpha = 0
+           deemView.addGestureRecognizer(tapGuesture)
+           return deemView
+       }()
+    
     var searchCongressResult:[CongressPerson]{
         get{
             guard let searchCongressString = searchCongressString else {
@@ -123,6 +132,16 @@ class CongressPeopleViewController: UIViewController {
     }
     
    
+    @objc func dismissDeemView(){
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            self.deemView.alpha = 0
+            self.summaryView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.summaryMenuHeight)
+
+        }, completion: { (_) in
+            self.deemView.removeFromSuperview()
+        })
+    }
     
     private func configureSearchBarConstaints(){
         view.addSubview(searchBar)
@@ -163,24 +182,11 @@ class CongressPeopleViewController: UIViewController {
 }
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
-    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-
-        UIView.animate(withDuration: 0.7, delay: 0.5, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
-            let singlePerson = self.congressPeople[indexPath.row]
-                       self.summaryDiscription.text = singlePerson.description
-                       self.email.text = "Email: \(singlePerson.email)"
-            self.summaryView.frame = CGRect(x: 0, y: (self.view.frame.height - self.summaryMenuHeight) + 20, width: self.view.frame.width, height: self.summaryMenuHeight)
-           
-        }, completion: nil)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let PreviewVC = PreviewViewController()
+        navigationController?.pushViewController(PreviewVC, animated: true)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        UIView.animate(withDuration: 0.3) {
-            
-            self.summaryView.frame = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: self.summaryMenuHeight)
-            
-        }
-    }
 }
 
 extension CongressPeopleViewController: UICollectionViewDataSource{
@@ -191,6 +197,8 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
         let singlePerson = searchCongressResult[indexPath.row]
+        cell.delegate = self
+        cell.infoButton.tag = indexPath.item
         cell.configureCellFromCongressPerson(person: singlePerson)
         
         return cell
@@ -218,9 +226,28 @@ extension CongressPeopleViewController: UISearchBarDelegate{
         searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
-    
-//    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-//        <#code#>
-//    }
+
 }
 
+extension CongressPeopleViewController: CollectionViewCellDelegate{
+    func showCongressSummary(tag: Int) {
+        
+        if let window = UIApplication.shared.keyWindow{
+               window.addSubview(deemView)
+            window.addSubview(summaryView)
+               deemView.frame = window.frame
+        
+        let singlePerson = self.congressPeople[tag]
+         UIView.animate(withDuration: 0.7, delay: 0.5, usingSpringWithDamping: 0.80, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                        self.summaryDiscription.text = singlePerson.description
+                        self.email.text = "Email: \(singlePerson.email)"
+             self.deemView.alpha = 1
+             self.summaryView.frame = CGRect(x: 0, y: (self.view.frame.height - self.summaryMenuHeight) + 20, width: self.view.frame.width, height: self.summaryMenuHeight)
+            
+         }, completion: nil)
+        
+        }
+    }
+    
+    
+}

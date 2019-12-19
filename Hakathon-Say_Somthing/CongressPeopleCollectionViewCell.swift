@@ -9,7 +9,12 @@
 import UIKit
 import Kingfisher
 
+protocol CollectionViewCellDelegate: AnyObject {
+    func showCongressSummary(tag: Int)
+}
+
 class CongressPeopleCollectionViewCell: UICollectionViewCell {
+    weak var delegate: CollectionViewCellDelegate?
     
     lazy var congressImage:UIImageView = {
         let image = UIImageView()
@@ -20,8 +25,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var name:UILabel  = {
         let label = UILabel()
-        label.text = "Brian Smith"
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont(name: "Avenir-Light", size: 16)
         label.numberOfLines = 0
@@ -30,8 +34,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var district:UILabel  = {
         let label = UILabel()
-        label.text = "District 11"
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.font = UIFont(name: "Avenir-Bold", size: 16)
         label.numberOfLines = 0
@@ -42,18 +45,15 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         let tv = UITextView()
         tv.backgroundColor = .clear
         tv.textAlignment = .center
-        tv.textAlignment = .left
         tv.adjustsFontForContentSizeCategory = false
         tv.isUserInteractionEnabled = false
-        tv.text = "218-28 Merrick Blvd, Springfield Gardens, NY 11413"
         tv.font = UIFont(name: "Avenir-Light", size: 16)
         return tv
     }()
     
     lazy var phoneNumber:UILabel  = {
         let label = UILabel()
-        label.text = "(212)567-2956"
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         label.numberOfLines = 0
         label.font = UIFont(name: "Avenir-Light", size: 17)
@@ -66,6 +66,18 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
+    lazy var infoButton:UIButton = {
+    let button  = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        button.layer.borderColor = UIColor.white.cgColor
+        button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        button.contentMode = .scaleAspectFill
+        button.backgroundColor = .white
+        button.layer.borderWidth = 2
+        button.layer.cornerRadius = button.layer.frame.height / 2
+        button.addTarget(self, action: #selector(handleInfoButtonPressed(sender:)), for: .touchUpInside)
+    return button
+    }()
+    
     //MARK: Lifecycle
     override init (frame:CGRect){
         super.init(frame:frame)
@@ -75,10 +87,15 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         configureAddressConstraints()
         configurePhoneNumberConstraints()
         configureHairLineViewConstraints()
+        configureInfoButtonConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func handleInfoButtonPressed(sender:UIButton){
+        delegate?.showCongressSummary(tag: sender.tag)
     }
     
     public func configureCellFromCongressPerson(person: CongressPerson) {
@@ -126,5 +143,11 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         self.addSubview(hairLineView)
         hairLineView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([hairLineView.topAnchor.constraint(equalTo: phoneNumber.topAnchor, constant:  25), hairLineView.centerXAnchor.constraint(equalTo: self.centerXAnchor), hairLineView.heightAnchor.constraint(equalToConstant: 1), hairLineView.widthAnchor.constraint(equalToConstant: 100)])
+    }
+    
+    func configureInfoButtonConstraints(){
+        self.addSubview(infoButton)
+        infoButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([infoButton.centerXAnchor.constraint(equalTo: congressImage.trailingAnchor), infoButton.topAnchor.constraint(equalTo: congressImage.topAnchor, constant:  20)])
     }
 }
