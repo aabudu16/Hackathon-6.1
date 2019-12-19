@@ -3,21 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6CF18B621D02F9EEFE5A635F /* Pods_Hakathon_Say_SomthingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7315D0275064B699A796CFB5 /* Pods_Hakathon_Say_SomthingTests.framework */; };
+		6EBD8F6A036CC9B7E514E476 /* Pods_Hakathon_Say_Somthing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01216E8A34A3660B32E3094C /* Pods_Hakathon_Say_Somthing.framework */; };
 		859A29BE23AA9BC8005F8173 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29BD23AA9BC8005F8173 /* AppDelegate.swift */; };
 		859A29C023AA9BC8005F8173 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29BF23AA9BC8005F8173 /* SceneDelegate.swift */; };
 		859A29C223AA9BC8005F8173 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29C123AA9BC8005F8173 /* UserInfoViewController.swift */; };
 		859A29C723AA9BCA005F8173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859A29C623AA9BCA005F8173 /* Assets.xcassets */; };
 		859A29CA23AA9BCA005F8173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859A29C823AA9BCA005F8173 /* LaunchScreen.storyboard */; };
 		859A29D523AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29D423AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift */; };
-		859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */; };
 		859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */; };
-		859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* PreviewViewController.swift */; };
+		859A29E423AA9CCA005F8173 /* EnvironmentalTopicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */; };
 		859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E523AAAB04005F8173 /* Identifiers.swift */; };
 		859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */; };
+		859A29EC23ABC5F0005F8173 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29EB23ABC5F0005F8173 /* Utilities.swift */; };
+		859A29EE23ABDCCA005F8173 /* EnvironmentalTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */; };
+		859A29F023ABDD24005F8173 /* EnvironmentalTopicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */; };
 		971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00CF4CBCBE4EF231A46EB811 /* Pods-Hakathon-Say_SomthingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakathon-Say_SomthingTests.release.xcconfig"; path = "Target Support Files/Pods-Hakathon-Say_SomthingTests/Pods-Hakathon-Say_SomthingTests.release.xcconfig"; sourceTree = "<group>"; };
+		01216E8A34A3660B32E3094C /* Pods_Hakathon_Say_Somthing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakathon_Say_Somthing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F1EDA2A7EDCC54AC40D6732 /* Pods-Hakathon-Say_Somthing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakathon-Say_Somthing.release.xcconfig"; path = "Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing.release.xcconfig"; sourceTree = "<group>"; };
+		462C0F02E4FE5975BF1067B5 /* Pods-Hakathon-Say_SomthingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakathon-Say_SomthingTests.debug.xcconfig"; path = "Target Support Files/Pods-Hakathon-Say_SomthingTests/Pods-Hakathon-Say_SomthingTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7315D0275064B699A796CFB5 /* Pods_Hakathon_Say_SomthingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hakathon_Say_SomthingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A29BA23AA9BC8005F8173 /* Hakathon-Say_Somthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hakathon-Say_Somthing.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A29BD23AA9BC8005F8173 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		859A29BF23AA9BC8005F8173 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,12 +51,15 @@
 		859A29D023AA9BCA005F8173 /* Hakathon-Say_SomthingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hakathon-Say_SomthingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A29D423AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hakathon_Say_SomthingTests.swift; sourceTree = "<group>"; };
 		859A29D623AA9BCA005F8173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSelectionViewController.swift; sourceTree = "<group>"; };
 		859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleViewController.swift; sourceTree = "<group>"; };
-		859A29E323AA9CCA005F8173 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopicsVC.swift; sourceTree = "<group>"; };
 		859A29E523AAAB04005F8173 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		859A29EB23ABC5F0005F8173 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopics.swift; sourceTree = "<group>"; };
+		859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopicsCell.swift; sourceTree = "<group>"; };
 		971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPerson.swift; sourceTree = "<group>"; };
+		9E4C1AD1230B4530D228DFB8 /* Pods-Hakathon-Say_Somthing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakathon-Say_Somthing.debug.xcconfig"; path = "Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EBD8F6A036CC9B7E514E476 /* Pods_Hakathon_Say_Somthing.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,18 +75,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CF18B621D02F9EEFE5A635F /* Pods_Hakathon_Say_SomthingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1616F7397B760BA389FC7A64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01216E8A34A3660B32E3094C /* Pods_Hakathon_Say_Somthing.framework */,
+				7315D0275064B699A796CFB5 /* Pods_Hakathon_Say_SomthingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F4B4D06825C183FEA59D927 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E4C1AD1230B4530D228DFB8 /* Pods-Hakathon-Say_Somthing.debug.xcconfig */,
+				3F1EDA2A7EDCC54AC40D6732 /* Pods-Hakathon-Say_Somthing.release.xcconfig */,
+				462C0F02E4FE5975BF1067B5 /* Pods-Hakathon-Say_SomthingTests.debug.xcconfig */,
+				00CF4CBCBE4EF231A46EB811 /* Pods-Hakathon-Say_SomthingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		859A29B123AA9BC8005F8173 = {
 			isa = PBXGroup;
 			children = (
 				859A29BC23AA9BC8005F8173 /* Hakathon-Say_Somthing */,
 				859A29D323AA9BCA005F8173 /* Hakathon-Say_SomthingTests */,
 				859A29BB23AA9BC8005F8173 /* Products */,
+				6F4B4D06825C183FEA59D927 /* Pods */,
+				1616F7397B760BA389FC7A64 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,10 +129,12 @@
 				859A29BD23AA9BC8005F8173 /* AppDelegate.swift */,
 				859A29BF23AA9BC8005F8173 /* SceneDelegate.swift */,
 				859A29C123AA9BC8005F8173 /* UserInfoViewController.swift */,
-				859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */,
+				859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */,
+				859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */,
+				859A29EB23ABC5F0005F8173 /* Utilities.swift */,
 				859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */,
 				859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */,
-				859A29E323AA9CCA005F8173 /* PreviewViewController.swift */,
+				859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */,
 				859A29E523AAAB04005F8173 /* Identifiers.swift */,
 				859A29C623AA9BCA005F8173 /* Assets.xcassets */,
 				859A29C823AA9BCA005F8173 /* LaunchScreen.storyboard */,
@@ -121,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 859A29D923AA9BCA005F8173 /* Build configuration list for PBXNativeTarget "Hakathon-Say_Somthing" */;
 			buildPhases = (
+				A1961CBF7030D04AD3BE010F /* [CP] Check Pods Manifest.lock */,
 				859A29B623AA9BC8005F8173 /* Sources */,
 				859A29B723AA9BC8005F8173 /* Frameworks */,
 				859A29B823AA9BC8005F8173 /* Resources */,
+				497A6705778A3EE8E9881481 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 859A29DC23AA9BCA005F8173 /* Build configuration list for PBXNativeTarget "Hakathon-Say_SomthingTests" */;
 			buildPhases = (
+				FE8374AB126E1E63F25E7317 /* [CP] Check Pods Manifest.lock */,
 				859A29CC23AA9BCA005F8173 /* Sources */,
 				859A29CD23AA9BCA005F8173 /* Frameworks */,
 				859A29CE23AA9BCA005F8173 /* Resources */,
@@ -209,6 +250,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		497A6705778A3EE8E9881481 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1961CBF7030D04AD3BE010F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hakathon-Say_Somthing-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8374AB126E1E63F25E7317 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hakathon-Say_SomthingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		859A29B623AA9BC8005F8173 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,12 +322,14 @@
 				859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */,
 				859A29C223AA9BC8005F8173 /* UserInfoViewController.swift in Sources */,
 				859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */,
-				859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */,
+				859A29F023ABDD24005F8173 /* EnvironmentalTopicsCell.swift in Sources */,
 				859A29BE23AA9BC8005F8173 /* AppDelegate.swift in Sources */,
 				859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */,
 				971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */,
 				859A29C023AA9BC8005F8173 /* SceneDelegate.swift in Sources */,
-				859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */,
+				859A29EE23ABDCCA005F8173 /* EnvironmentalTopics.swift in Sources */,
+				859A29EC23ABC5F0005F8173 /* Utilities.swift in Sources */,
+				859A29E423AA9CCA005F8173 /* EnvironmentalTopicsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +479,7 @@
 		};
 		859A29DA23AA9BCA005F8173 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E4C1AD1230B4530D228DFB8 /* Pods-Hakathon-Say_Somthing.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +497,7 @@
 		};
 		859A29DB23AA9BCA005F8173 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F1EDA2A7EDCC54AC40D6732 /* Pods-Hakathon-Say_Somthing.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -406,6 +515,7 @@
 		};
 		859A29DD23AA9BCA005F8173 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 462C0F02E4FE5975BF1067B5 /* Pods-Hakathon-Say_SomthingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -427,6 +537,7 @@
 		};
 		859A29DE23AA9BCA005F8173 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00CF4CBCBE4EF231A46EB811 /* Pods-Hakathon-Say_SomthingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
