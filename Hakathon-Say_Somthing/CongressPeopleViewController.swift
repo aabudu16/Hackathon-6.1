@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Kingfisher
+
 
 class CongressPeopleViewController: UIViewController {
+    
+    var congressPeople = CongressPerson.congressPeople
     
     let summaryMenuHeight:CGFloat = 250
     lazy var searchBar:UISearchBar = {
@@ -84,6 +88,8 @@ class CongressPeopleViewController: UIViewController {
         configureSummaryMenuHeightConstraint()
     }
     
+   
+    
     private func configureSearchBarConstaints(){
         view.addSubview(searchBar)
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -139,13 +145,14 @@ extension CongressPeopleViewController: UICollectionViewDelegate{
 
 extension CongressPeopleViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return congressPeople.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.congressCell.rawValue, for: indexPath) as? CongressPeopleCollectionViewCell else {return UICollectionViewCell()}
-        // cell.layer.borderWidth = 2
-        // cell.layer.borderColor = UIColor.blue.cgColor
+        let singlePerson = congressPeople[indexPath.row]
+        cell.configureCellFromCongressPerson(person: singlePerson)
+        
         return cell
     }
 }

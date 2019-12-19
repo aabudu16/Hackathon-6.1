@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
@@ -30,8 +31,8 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var district:UILabel  = {
         let label = UILabel()
-         label.text = "District 11"
-       // label.backgroundColor  = .blue
+        label.text = "District 11"
+        // label.backgroundColor  = .blue
         
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
@@ -54,7 +55,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     
     lazy var phoneNumber:UILabel  = {
         let label = UILabel()
-       // label.backgroundColor  = .blue
+        // label.backgroundColor  = .blue
         label.text = "(212)567-2956"
         label.textAlignment = .left
         label.adjustsFontSizeToFitWidth = true
@@ -84,15 +85,24 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func configureCellFromCongressPerson(person: CongressPerson) {
+        name.text = person.name
+        phoneNumber.text = person.number
+        address.text = person.address
+        district.text = "District \(person.district)"
+        congressImage.kf.indicatorType = .activity
+        congressImage.kf.setImage(with: URL(string: person.imageURL))
+    }
+    
     
     func configureImageViewConstraints(){
         self.addSubview(congressImage)
         congressImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([congressImage.topAnchor.constraint(equalTo: self.topAnchor), congressImage.centerXAnchor.constraint(equalTo: self.centerXAnchor), congressImage.widthAnchor.constraint(equalToConstant: 110), congressImage.heightAnchor.constraint(equalToConstant: 165)])
     }
-   
+    
     func configureDistrictConstraints(){
-       self.addSubview(district)
+        self.addSubview(district)
         district.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([district.topAnchor.constraint(equalTo: congressImage.bottomAnchor, constant: 2), district.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), district.trailingAnchor.constraint(equalTo: self.trailingAnchor), district.heightAnchor.constraint(equalToConstant: 20)])
     }
@@ -110,10 +120,10 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     }
     
     func configurePhoneNumberConstraints(){
-         self.addSubview(phoneNumber)
-           phoneNumber.translatesAutoresizingMaskIntoConstraints = false
-           NSLayoutConstraint.activate([phoneNumber.topAnchor.constraint(equalTo: address.bottomAnchor, constant: 3), phoneNumber.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), phoneNumber.trailingAnchor.constraint(equalTo: self.trailingAnchor), phoneNumber.heightAnchor.constraint(equalTo: district.heightAnchor)])
-       }
+        self.addSubview(phoneNumber)
+        phoneNumber.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([phoneNumber.topAnchor.constraint(equalTo: address.bottomAnchor, constant: 3), phoneNumber.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 2), phoneNumber.trailingAnchor.constraint(equalTo: self.trailingAnchor), phoneNumber.heightAnchor.constraint(equalTo: district.heightAnchor)])
+    }
     
     func configureHairLineViewConstraints(){
         self.addSubview(hairLineView)
