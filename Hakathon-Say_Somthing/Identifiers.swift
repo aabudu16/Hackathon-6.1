@@ -11,5 +11,6 @@ import Foundation
 //MARK: Enum Cell Identifier
 enum Identifiers:String{
     case congressCell
+      case topicCell
 }
 

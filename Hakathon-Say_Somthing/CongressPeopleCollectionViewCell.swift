@@ -47,7 +47,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         tv.textAlignment = .center
         tv.adjustsFontForContentSizeCategory = false
         tv.isUserInteractionEnabled = false
-        tv.font = UIFont(name: "Avenir-Light", size: 16)
+        tv.font = UIFont(name:"Avenir-Light", size: 16)
         return tv
     }()
     
@@ -70,7 +70,7 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     let button  = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         button.layer.borderColor = UIColor.white.cgColor
         button.setImage(UIImage(systemName: "info.circle"), for: .normal)
-        button.contentMode = .scaleAspectFill
+        button.contentMode = .scaleAspectFit
         button.backgroundColor = .white
         button.layer.borderWidth = 2
         button.layer.cornerRadius = button.layer.frame.height / 2
@@ -88,6 +88,8 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
         configurePhoneNumberConstraints()
         configureHairLineViewConstraints()
         configureInfoButtonConstraints()
+        backgroundColor = #colorLiteral(red: 0.8654342294, green: 0.8549668193, blue: 0.8733902574, alpha: 0.7851830051)
+        layer.cornerRadius = 10
     }
     
     required init?(coder: NSCoder) {
@@ -148,6 +150,6 @@ class CongressPeopleCollectionViewCell: UICollectionViewCell {
     func configureInfoButtonConstraints(){
         self.addSubview(infoButton)
         infoButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([infoButton.centerXAnchor.constraint(equalTo: congressImage.trailingAnchor), infoButton.topAnchor.constraint(equalTo: congressImage.topAnchor, constant:  20)])
+        NSLayoutConstraint.activate([infoButton.topAnchor.constraint(equalTo: congressImage.topAnchor, constant:  10),infoButton.leadingAnchor.constraint(equalTo: congressImage.trailingAnchor,constant: 10), infoButton.widthAnchor.constraint(equalToConstant: 20), infoButton.heightAnchor.constraint(equalToConstant: 20)])
     }
 }

@@ -22,7 +22,10 @@ class CongressPeopleViewController: UIViewController {
         searchBar.showsScopeBar = true
         searchBar.placeholder = " Search..."
         searchBar.sizeToFit()
-        searchBar.isTranslucent = false
+        searchBar.isTranslucent = true
+        searchBar.barStyle = .default
+        searchBar.backgroundColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
+        searchBar.barTintColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
         searchBar.delegate = self
         return searchBar
     }()
@@ -33,7 +36,7 @@ class CongressPeopleViewController: UIViewController {
         let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         collectionView.register( CongressPeopleCollectionViewCell.self, forCellWithReuseIdentifier: Identifiers.congressCell.rawValue)
         collectionView.allowsMultipleSelection = true
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = #colorLiteral(red: 0.0961939469, green: 0.2122457325, blue: 0.06203992665, alpha: 1)
         collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
@@ -183,8 +186,8 @@ class CongressPeopleViewController: UIViewController {
 
 extension CongressPeopleViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let PreviewVC = PreviewViewController()
-        navigationController?.pushViewController(PreviewVC, animated: true)
+        let enviromentalVC = EnvironmentalTopicsVC()
+        navigationController?.pushViewController(enviromentalVC, animated: true)
     }
     
 }
@@ -203,12 +206,14 @@ extension CongressPeopleViewController: UICollectionViewDataSource{
         
         return cell
     }
+    
+    
 }
 
 extension CongressPeopleViewController: UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let virticalCellCGSize = CGSize(width: 200, height: 300)
+        let virticalCellCGSize = CGSize(width: 180, height: 300)
         return virticalCellCGSize
     }
 }

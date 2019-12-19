@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,11 +15,13 @@
 		859A29C723AA9BCA005F8173 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 859A29C623AA9BCA005F8173 /* Assets.xcassets */; };
 		859A29CA23AA9BCA005F8173 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 859A29C823AA9BCA005F8173 /* LaunchScreen.storyboard */; };
 		859A29D523AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29D423AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift */; };
-		859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */; };
 		859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */; };
-		859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* PreviewViewController.swift */; };
+		859A29E423AA9CCA005F8173 /* EnvironmentalTopicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */; };
 		859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E523AAAB04005F8173 /* Identifiers.swift */; };
 		859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */; };
+		859A29EC23ABC5F0005F8173 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29EB23ABC5F0005F8173 /* Utilities.swift */; };
+		859A29EE23ABDCCA005F8173 /* EnvironmentalTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */; };
+		859A29F023ABDD24005F8173 /* EnvironmentalTopicsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */; };
 		971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,11 +51,13 @@
 		859A29D023AA9BCA005F8173 /* Hakathon-Say_SomthingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hakathon-Say_SomthingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		859A29D423AA9BCA005F8173 /* Hakathon_Say_SomthingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hakathon_Say_SomthingTests.swift; sourceTree = "<group>"; };
 		859A29D623AA9BCA005F8173 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSelectionViewController.swift; sourceTree = "<group>"; };
 		859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleViewController.swift; sourceTree = "<group>"; };
-		859A29E323AA9CCA005F8173 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopicsVC.swift; sourceTree = "<group>"; };
 		859A29E523AAAB04005F8173 /* Identifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiers.swift; sourceTree = "<group>"; };
 		859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		859A29EB23ABC5F0005F8173 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopics.swift; sourceTree = "<group>"; };
+		859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentalTopicsCell.swift; sourceTree = "<group>"; };
 		971F6D8D23AAB8AE007CC67E /* CongressPerson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongressPerson.swift; sourceTree = "<group>"; };
 		9E4C1AD1230B4530D228DFB8 /* Pods-Hakathon-Say_Somthing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hakathon-Say_Somthing.debug.xcconfig"; path = "Target Support Files/Pods-Hakathon-Say_Somthing/Pods-Hakathon-Say_Somthing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +99,6 @@
 				462C0F02E4FE5975BF1067B5 /* Pods-Hakathon-Say_SomthingTests.debug.xcconfig */,
 				00CF4CBCBE4EF231A46EB811 /* Pods-Hakathon-Say_SomthingTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -126,10 +129,12 @@
 				859A29BD23AA9BC8005F8173 /* AppDelegate.swift */,
 				859A29BF23AA9BC8005F8173 /* SceneDelegate.swift */,
 				859A29C123AA9BC8005F8173 /* UserInfoViewController.swift */,
-				859A29DF23AA9C96005F8173 /* MessageSelectionViewController.swift */,
+				859A29EF23ABDD24005F8173 /* EnvironmentalTopicsCell.swift */,
+				859A29ED23ABDCCA005F8173 /* EnvironmentalTopics.swift */,
+				859A29EB23ABC5F0005F8173 /* Utilities.swift */,
 				859A29E123AA9CB2005F8173 /* CongressPeopleViewController.swift */,
 				859A29E923AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift */,
-				859A29E323AA9CCA005F8173 /* PreviewViewController.swift */,
+				859A29E323AA9CCA005F8173 /* EnvironmentalTopicsVC.swift */,
 				859A29E523AAAB04005F8173 /* Identifiers.swift */,
 				859A29C623AA9BCA005F8173 /* Assets.xcassets */,
 				859A29C823AA9BCA005F8173 /* LaunchScreen.storyboard */,
@@ -317,12 +322,14 @@
 				859A29EA23AAAB70005F8173 /* CongressPeopleCollectionViewCell.swift in Sources */,
 				859A29C223AA9BC8005F8173 /* UserInfoViewController.swift in Sources */,
 				859A29E223AA9CB2005F8173 /* CongressPeopleViewController.swift in Sources */,
-				859A29E023AA9C96005F8173 /* MessageSelectionViewController.swift in Sources */,
+				859A29F023ABDD24005F8173 /* EnvironmentalTopicsCell.swift in Sources */,
 				859A29BE23AA9BC8005F8173 /* AppDelegate.swift in Sources */,
 				859A29E623AAAB04005F8173 /* Identifiers.swift in Sources */,
 				971F6D8E23AAB8AE007CC67E /* CongressPerson.swift in Sources */,
 				859A29C023AA9BC8005F8173 /* SceneDelegate.swift in Sources */,
-				859A29E423AA9CCA005F8173 /* PreviewViewController.swift in Sources */,
+				859A29EE23ABDCCA005F8173 /* EnvironmentalTopics.swift in Sources */,
+				859A29EC23ABC5F0005F8173 /* Utilities.swift in Sources */,
+				859A29E423AA9CCA005F8173 /* EnvironmentalTopicsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
